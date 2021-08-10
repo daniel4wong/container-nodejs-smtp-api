@@ -1,0 +1,14 @@
+{
+  "name": "smtp-api",
+  "version": "1.0.0",
+  "description": "SMTP API on Container",
+  "author": "Daniel Wong <daniel4wong@gmail.com>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node ./src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1",
+    "nodemailer": "^6.6.3"
+  }
+}
