@@ -30,3 +30,10 @@ How to develop the application?
 5. run `npm install && npm run start` to start the server
 6. update *test-local.sh* for the *from* and *to*
 7. run `sh test-local.sh` to send email
+
+
+How to push the local container to public registry?
+
+1. create a public reposistory in quay.io
+2. run `podman login quay.io` to login
+3. run `podman push localhost/smtp-api quay.io/<your-account>/smtp-api` to push
