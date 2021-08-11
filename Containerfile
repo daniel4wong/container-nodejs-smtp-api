@@ -3,6 +3,12 @@ FROM node:14
 MAINTAINER Daniel Wong <daniel4wong@gmail.com>
 
 ARG BUILD='PRD'
+ARG SMTP_HOST='smtp.gmail.com'
+ARG SMTP_PORT=587
+ARG SMTP_TLS=true
+ARG SMTP_USER='sender@gmail.com'
+ARG SMTP_PASS='password'
+
 ENV SMTP_HOST=${SMTP_HOST} \
     SMTP_PORT=${SMTP_PORT} \
     SMTP_TLS=${SMTP_TLS} \
@@ -31,6 +37,8 @@ RUN if [ ${BUILD} != 'PRD' ]; then \
 RUN if [ ${BUILD} != 'PRD' ]; then \
       echo '+++' && node -v && echo '---' && npm -v && echo '---' && pwd && echo '---' && ls -la && echo '+++' \
     ; fi
+
+RUN env | grep SMTP
 
 EXPOSE ${APP_PORT}
 
