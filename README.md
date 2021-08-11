@@ -37,3 +37,9 @@ How to push the local container to public registry?
 1. create a public reposistory in quay.io
 2. run `podman login quay.io` to login
 3. run `podman push localhost/smtp-api quay.io/<your-account>/smtp-api` to push
+
+How to run pod in OpenShift
+1. use `oc login ...` to login
+2. run `oc new-app --name smtp-api -e SMTP_USER='your@gmail.com' -e SMTP_PASS='password' quay.io/daniel4wong/smtp-api` to create deployment and pod
+3. run `oc expose service/smtp-api` to create route
+4. run `oc get route/smtp-api` to check the public url
