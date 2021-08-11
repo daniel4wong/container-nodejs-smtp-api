@@ -14,7 +14,7 @@ How to use the container?
 4. run `sh run.sh` to deploy the pod as name: smtp-api, or run
    
    `
-   podman run --name smtp-api -d -p 18080:8080 localhost/smtp-api -e SMTP_USER="your@gmail.com" -e SMTP_PASS="password" --replace=true
+   podman run --replace --name smtp-api -d -p 18080:8080 localhost/smtp-api -e SMTP_USER="your@gmail.com" -e SMTP_PASS="password"
    `
    
    *remark: --replace=true only avaliable in podman v2.0.6 or later*
